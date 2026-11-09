@@ -32,9 +32,11 @@ export default function NewsCarousel({ news }) {
                   <img
                     src={item.image}
                     alt=""
-                    className="d-block w-100"
+                    className="d-block w-100 rounded"
                     width="1200"
-                    height="500"
+                    height="800"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
                   />
                 </div>
                 <div className="col-md-6">

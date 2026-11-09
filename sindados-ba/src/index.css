@@ -50,6 +50,8 @@ body {
 
 .news-slide img {
   height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 .news-carousel .carousel-control-prev,
