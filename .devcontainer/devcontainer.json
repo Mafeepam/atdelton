@@ -1,0 +1,12 @@
+{
+  "name": "SINDADOS-BA",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  "postCreateCommand": "npm --prefix sindados-ba ci",
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "SINDADOS-BA",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}

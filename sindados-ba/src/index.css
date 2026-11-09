@@ -1,78 +1,72 @@
-/* =========================================================
-   SINDADOS-BA — Paleta institucional e ajustes finos
-   O grosso do layout vem dos utilitários do Bootstrap 5.
-   ========================================================= */
-
 :root {
-  /* Tons de azul institucionais sobrescrevendo as variáveis do Bootstrap */
+  font-synthesis: none;
   --bs-primary: #0b3d6b;
   --bs-primary-rgb: 11, 61, 107;
-  --sindados-azul-claro: #1b6ca8;
-  --sindados-dourado: #f0b429;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #f5f7fa;
-}
-
-/* Sobrescreve as classes utilitárias do Bootstrap com a cor do sindicato */
-.bg-primary {
-  background-color: var(--bs-primary) !important;
+  font-family: Arial, sans-serif;
 }
 
 .btn-primary {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--sindados-azul-claro);
-  border-color: var(--sindados-azul-claro);
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #082f53;
+  --bs-btn-hover-border-color: #082f53;
+  --bs-btn-active-bg: #082f53;
+  --bs-btn-active-border-color: #082f53;
 }
 
 .btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1100;
+  padding: 0.75rem 1rem;
+  background: white;
   color: var(--bs-primary);
-  border-color: var(--bs-primary);
 }
 
-.btn-outline-primary:hover {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+.news-carousel .carousel-item {
+  transition: transform 280ms ease-out;
 }
 
-.text-primary {
-  color: var(--bs-primary) !important;
+.news-carousel .carousel-indicators button {
+  transition: opacity 160ms ease-out;
 }
 
-/* Carrossel: altura controlada e legenda legível sobre a imagem */
-.carousel-slide {
-  height: 420px;
-  object-fit: cover;
+.news-slide {
+  min-height: 20rem;
+  margin: 0;
+  padding: 1rem 8% 3rem;
 }
 
-@media (max-width: 768px) {
-  .carousel-slide {
-    height: 300px;
+.news-slide img {
+  height: auto;
+}
+
+.news-carousel .carousel-control-prev,
+.news-carousel .carousel-control-next {
+  width: 7%;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-carousel .carousel-item,
+  .news-carousel .carousel-indicators button,
+  .collapsing,
+  .modal.fade .modal-dialog {
+    transition: none;
   }
-}
-
-.carousel-caption-box {
-  background: rgba(11, 61, 107, 0.82);
-  border-radius: 0.5rem;
-  padding: 1.25rem 1.5rem;
-}
-
-/* Faixa dourada de destaque abaixo da navbar */
-.faixa-destaque {
-  background: var(--sindados-dourado);
-  height: 4px;
-}
-
-/* Tabela: cabeçalho fixo na cor institucional */
-.table-sindados thead th {
-  background-color: var(--bs-primary);
-  color: #fff;
-  vertical-align: middle;
 }

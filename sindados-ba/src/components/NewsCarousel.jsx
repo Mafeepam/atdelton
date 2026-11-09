@@ -1,63 +1,57 @@
 import { useState } from 'react'
-import { Carousel, Button, Container } from 'react-bootstrap'
+import { Button, Carousel, Container } from 'react-bootstrap'
 
-/**
- * NewsCarousel
- * Carrossel de notícias e campanhas do topo da página.
- *
- * Recebe por props o array de notícias (id, titulo, descricao, imagem, link)
- * e controla o slide ativo por estado local (useState), o que permite
- * exibir um contador e reagir à troca de slides.
- *
- * @param {Array} noticias lista de notícias a exibir
- */
-function NewsCarousel({ noticias }) {
-  const [slideAtivo, setSlideAtivo] = useState(0)
-
-  // Guarda de segurança: sem dados, nada é renderizado.
-  if (!noticias || noticias.length === 0) {
-    return null
-  }
+export default function NewsCarousel({ news }) {
+  const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section id="noticias" className="my-4">
+    <section id="news" className="my-4" aria-labelledby="news-title">
       <Container>
+        <h2 id="news-title" className="h4 mb-3">
+          Notícias e campanhas
+        </h2>
         <Carousel
-          activeIndex={slideAtivo}
-          onSelect={(indice) => setSlideAtivo(indice)}
+          activeIndex={activeIndex}
+          onSelect={setActiveIndex}
+          interval={null}
           indicators
           controls
-          fade
-          interval={6000}
-          className="rounded overflow-hidden shadow"
+          prevLabel="Notícia anterior"
+          nextLabel="Próxima notícia"
+          indicatorLabels={news.map((item) => `Mostrar ${item.title}`)}
+          className="news-carousel bg-primary text-white"
         >
-          {noticias.map((noticia) => (
-            <Carousel.Item key={noticia.id}>
-              <img
-                src={noticia.imagem}
-                alt={noticia.titulo}
-                className="d-block w-100 carousel-slide"
-              />
-              <Carousel.Caption className="text-start pb-5">
-                <div className="carousel-caption-box">
-                  <h2 className="h3 fw-bold">{noticia.titulo}</h2>
-                  <p className="d-none d-md-block mb-3">{noticia.descricao}</p>
-                  <Button variant="warning" href={noticia.link} className="fw-semibold">
-                    {noticia.textoBotao}
+          {news.map((item, index) => (
+            <Carousel.Item
+              key={item.id}
+              aria-hidden={activeIndex !== index}
+              inert={activeIndex !== index}
+            >
+              <div className="news-slide row align-items-center g-3">
+                <div className="col-md-6">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="d-block w-100"
+                    width="1200"
+                    height="500"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <h3 className="h4">{item.title}</h3>
+                  <p>{item.description}</p>
+                  <Button variant="light" href={item.link}>
+                    {item.actionLabel}
                   </Button>
                 </div>
-              </Carousel.Caption>
+              </div>
             </Carousel.Item>
           ))}
         </Carousel>
-
-        {/* Contador alimentado pelo estado do carrossel */}
-        <p className="text-center text-secondary small mt-2 mb-0">
-          Destaque {slideAtivo + 1} de {noticias.length} — {noticias[slideAtivo].titulo}
+        <p className="text-secondary small mt-2 mb-0" role="status">
+          Destaque {activeIndex + 1} de {news.length}
         </p>
       </Container>
     </section>
   )
 }
-
-export default NewsCarousel
