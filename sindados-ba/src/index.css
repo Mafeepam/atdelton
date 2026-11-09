@@ -1,0 +1,78 @@
+/* =========================================================
+   SINDADOS-BA — Paleta institucional e ajustes finos
+   O grosso do layout vem dos utilitários do Bootstrap 5.
+   ========================================================= */
+
+:root {
+  /* Tons de azul institucionais sobrescrevendo as variáveis do Bootstrap */
+  --bs-primary: #0b3d6b;
+  --bs-primary-rgb: 11, 61, 107;
+  --sindados-azul-claro: #1b6ca8;
+  --sindados-dourado: #f0b429;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Sobrescreve as classes utilitárias do Bootstrap com a cor do sindicato */
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--sindados-azul-claro);
+  border-color: var(--sindados-azul-claro);
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+/* Carrossel: altura controlada e legenda legível sobre a imagem */
+.carousel-slide {
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 300px;
+  }
+}
+
+.carousel-caption-box {
+  background: rgba(11, 61, 107, 0.82);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Faixa dourada de destaque abaixo da navbar */
+.faixa-destaque {
+  background: var(--sindados-dourado);
+  height: 4px;
+}
+
+/* Tabela: cabeçalho fixo na cor institucional */
+.table-sindados thead th {
+  background-color: var(--bs-primary);
+  color: #fff;
+  vertical-align: middle;
+}

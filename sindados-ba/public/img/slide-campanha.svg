@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b3d6b"/>
+      <stop offset="100%" stop-color="#1b6ca8"/>
+    </linearGradient>
+    <pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 60 L60 0" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+      <circle cx="30" cy="30" r="2.5" fill="rgba(255,255,255,0.10)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="500" fill="url(#g)"/>
+  <rect width="1200" height="500" fill="url(#p)"/>
+  <g opacity="0.16" fill="none" stroke="#ffffff" stroke-width="6">
+    <circle cx="1010" cy="140" r="90"/>
+    <circle cx="1090" cy="330" r="55"/>
+    <path d="M820 420 L900 340 L980 420"/>
+  </g>
+  <text x="70" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="rgba(255,255,255,0.75)" letter-spacing="6">SINDADOS-BA</text>
+  <text x="70" y="275" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="bold" fill="#ffffff">CAMPANHA SALARIAL</text>
+  <text x="70" y="325" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="rgba(255,255,255,0.85)">2026 / 2027</text>
+  <rect x="70" y="350" width="140" height="6" rx="3" fill="#f0b429"/>
+</svg>
