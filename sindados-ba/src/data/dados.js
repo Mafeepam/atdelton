@@ -1,9 +1,3 @@
-/* =========================================================
-   Fonte de dados da aplicação.
-   Em um cenário real estes arrays viriam de uma API (fetch/axios).
-   Aqui são repassados por props aos componentes filhos.
-   ========================================================= */
-
 export const noticias = [
   {
     id: 1,
@@ -150,7 +144,6 @@ export const pisosSalariais = [
   },
 ]
 
-/* Perfil usado para simular a autenticação do sócio na Navbar. */
 export const perfilSocio = {
   nome: 'Ana Paula Nunes',
   matricula: '2026-04471',
