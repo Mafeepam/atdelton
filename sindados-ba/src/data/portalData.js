@@ -4,7 +4,7 @@ export const news = [
     title: 'Campanha Salarial 2026/2027',
     description:
       'Assembleia geral define a pauta de reivindicações da categoria de TI. Participe e fortaleça a negociação coletiva.',
-    image: '/img/slide-campaign.svg',
+    image: '/img/slide-campaign.jpg',
     link: '#salaries',
     actionLabel: 'Consultar pisos salariais',
   },
@@ -13,7 +13,7 @@ export const news = [
     title: 'Novos Conveniados de TI',
     description:
       'Dez novas escolas de tecnologia e certificadoras entram na rede de convênios com desconto para sócios e dependentes.',
-    image: '/img/slide-partners.svg',
+    image: '/img/slide-partners.jpg',
     link: '#membership',
     actionLabel: 'Conhecer a filiação',
   },
@@ -22,7 +22,7 @@ export const news = [
     title: 'Clube de Benefícios',
     description:
       'Saúde, odontologia, cultura e cursos com condições especiais para filiados ao SINDADOS-BA em toda a Bahia.',
-    image: '/img/slide-benefits.svg',
+    image: '/img/slide-benefits.jpg',
     link: '#membership',
     actionLabel: 'Conhecer os benefícios',
   },
@@ -31,7 +31,7 @@ export const news = [
     title: 'Assembleia Extraordinária - Home Office',
     description:
       'Discussão sobre o custeio de infraestrutura no trabalho remoto e o adicional de teletrabalho na convenção coletiva.',
-    image: '/img/slide-assembly.svg',
+    image: '/img/slide-assembly.jpg',
     link: '#salaries',
     actionLabel: 'Consultar jornadas',
   },
